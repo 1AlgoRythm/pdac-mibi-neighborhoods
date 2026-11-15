@@ -1,0 +1,67 @@
+847234 cells, 16 cell types, 8 relapsed vs 4 non-relapsed patients
+
+A. Cell-type fraction per patient, relapsed vs not
+  cell_type  median_relapse  median_no_relapse      p
+Plasmablast          0.0181             0.0077 0.1091
+          B          0.0168             0.0022 0.2141
+        CD4          0.0844             0.0263 0.2828
+  Lymphatic          0.0033             0.0016 0.2828
+         M1          0.0089             0.0132 0.2828
+         M2          0.1036             0.0709 0.2828
+ Neutrophil          0.0305             0.0851 0.2828
+        CD8          0.0428             0.0155 0.3677
+Endothelial          0.0390             0.0308 0.3677
+ Epithelial          0.0636             0.0401 0.3677
+       TReg          0.0098             0.0033 0.3677
+      Tumor          0.0574             0.0824 0.3677
+   Neuronal          0.0415             0.0493 0.4606
+   Monocyte          0.0061             0.0051 0.6828
+         NK          0.0001             0.0001 0.9333
+      Other          0.3860             0.3749 1.0000 
+
+B. What each topic-model neighborhood is made of (top 3 cell types)
+  CN0: Neuronal 66%, Other 17%, M2 4%  (3.4% of cells)
+  CN1: Epithelial 47%, B 25%, Other 14%  (9.7% of cells)
+  CN2: CD4 36%, CD8 18%, Other 18%  (15.1% of cells)
+  CN3: Endothelial 39%, Other 25%, M2 8%  (4.1% of cells)
+  CN4: M2 45%, Other 25%, CD4 7%  (8.1% of cells)
+  CN5: Neutrophil 61%, Other 16%, M2 5%  (12.9% of cells)
+  CN6: Tumor 71%, Other 15%, Neutrophil 6%  (9.0% of cells)
+  CN7: Other 64%, M2 8%, Neutrophil 5%  (37.5% of cells)
+
+B. Neighborhood fraction per patient, relapsed vs not
+neighborhood  median_relapse  median_no_relapse      p
+         CN1          0.0868             0.0593 0.1535
+         CN4          0.0976             0.0393 0.1535
+         CN3          0.0409             0.0280 0.2141
+         CN2          0.1538             0.0199 0.2828
+         CN5          0.0204             0.0827 0.2828
+         CN0          0.0326             0.0423 0.3677
+         CN6          0.0625             0.0883 0.3677
+         CN7          0.4035             0.3980 1.0000 
+
+B'. Same test with k-means neighborhoods (robustness check)
+neighborhood  median_relapse  median_no_relapse      p                              top_types
+         KM6          0.2788             0.1646 0.1091      Other 32%, M2 24%, Endothelial 9%
+         KM0          0.1178             0.0146 0.2828            CD4 43%, CD8 16%, Other 15%
+         KM2          0.0200             0.0834 0.2828       Neutrophil 62%, Other 17%, M2 5%
+         KM3          0.0596             0.0856 0.3677    Tumor 72%, Other 15%, Neutrophil 5%
+         KM7          0.0337             0.0431 0.3677         Neuronal 66%, Other 17%, M2 3%
+         KM5          0.0123             0.0009 0.3949                B 76%, CD4 9%, Other 6%
+         KM4          0.0659             0.0422 0.6828 Epithelial 70%, Other 18%, Neuronal 3%
+         KM1          0.3130             0.3076 1.0000               Other 70%, M2 6%, CD4 4% 
+
+C. Neutrophils within 50 um of tumour: 33202; beyond 200 um: 25803
+   Share of each patient's neutrophils that sit within 50 um of tumour:
+                     measure  median_relapse  median_no_relapse      p
+neutrophil_share_near_tumour           0.272             0.3507 0.4606
+   Mean marker level of interface neutrophils, per patient, relapsed vs not:
+marker  median_relapse  median_no_relapse      p
+  CD15          0.4480             0.3487 0.2141
+   MPO          0.4783             0.4303 0.2828
+HLA.DR          0.0273             0.0511 0.4606
+ Ki.67          0.0050             0.0027 0.4606
+  CD16          0.0504             0.1075 0.5697
+ CD11b          0.4261             0.4595 0.8081
+ PD.L1          0.2299             0.1554 0.8081
+CD45RO          0.1882             0.2033 1.0000
