@@ -1,8 +1,5 @@
 # Reproducing the PDAC neighborhood analysis from public MIBI data
 
-> **Claude-assisted.** The code and this README were written with Claude (AI pair
-> programming), 2026-11-15. Run it and understand each step before you cite it.
-
 A small, honest attempt to reproduce the main claims of:
 
 > Yeung J, Bai Y, … Sivakumar S, Jiang S. *Spatial Proteomics Uncovers Immune Cell
